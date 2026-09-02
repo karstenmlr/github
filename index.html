@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -45,10 +44,6 @@
                 #05000a;
         }
 
-        /* =========================================
-           PINKES NEON-LICHT
-           ========================================= */
-
         body::before {
             content: "";
 
@@ -73,10 +68,6 @@
 
             pointer-events: none;
         }
-
-        /* =========================================
-           BLAUES NEON-LICHT
-           ========================================= */
 
         body::after {
             content: "";
@@ -103,10 +94,6 @@
             pointer-events: none;
         }
 
-        /* =========================================
-           HAUPT-CONTAINER
-           ========================================= */
-
         .container {
             position: relative;
 
@@ -127,10 +114,6 @@
 
             text-align: center;
         }
-
-        /* =========================================
-           GROSSER ENGLISCHER HAUPTTEXT
-           ========================================= */
 
         .neon {
             width: 100%;
@@ -165,21 +148,14 @@
 
         .neon span {
             display: block;
-
             width: 100%;
-
             text-align: center;
         }
 
         .girlfriend {
             font-size: 0.78em;
-
             white-space: nowrap;
         }
-
-        /* =========================================
-           ENGLISCHER SATZ
-           ========================================= */
 
         .english-question {
             width: 100%;
@@ -212,10 +188,6 @@
                 englishGlow 2.5s ease-in-out infinite alternate;
         }
 
-        /* =========================================
-           ERSTER SPANISCHER TEXT
-           ========================================= */
-
         .spanisch {
             width: 100%;
 
@@ -245,10 +217,6 @@
                 spanishGlow 2.5s ease-in-out infinite alternate;
         }
 
-        /* =========================================
-           ZWEITER SPANISCHER TEXT
-           ========================================= */
-
         .spanisch-zweit {
             width: 100%;
 
@@ -277,10 +245,6 @@
                 spanishGlow 3s ease-in-out infinite alternate;
         }
 
-        /* =========================================
-           INSTAGRAM
-           ========================================= */
-
         .kontakt {
             width: 100%;
 
@@ -297,10 +261,6 @@
             gap: 70px;
         }
 
-        /* =========================================
-           ME / HER
-           ========================================= */
-
         .kontakt-item {
             display: flex;
 
@@ -315,7 +275,6 @@
             letter-spacing: 1px;
         }
 
-        /* Englische Wörter = PINK */
         .english-word {
             color: white;
 
@@ -325,7 +284,6 @@
                 0 0 20px #ff00cc;
         }
 
-        /* Spanische Wörter = BLAU */
         .spanish-word {
             color: white;
 
@@ -334,10 +292,6 @@
                 0 0 10px #00eaff,
                 0 0 20px #00eaff;
         }
-
-        /* =========================================
-           INSTAGRAM LINK
-           ========================================= */
 
         .kontakt-item a {
             display: inline-flex;
@@ -354,9 +308,7 @@
                 opacity 0.3s ease;
         }
 
-        /* =========================================
-           INSTAGRAM ICON
-           ========================================= */
+        /* Instagram Symbol – Silber/Grau */
 
         .instagram-icon {
             width: 46px;
@@ -367,35 +319,33 @@
             align-items: center;
             justify-content: center;
 
-            border: 3px solid white;
+            border: 3px solid #b8b8b8;
 
             border-radius: 12px;
 
             position: relative;
 
             box-shadow:
-                0 0 5px white,
-                0 0 10px #ff00cc,
-                0 0 20px #ff00cc,
-                0 0 40px #ff00cc;
+                0 0 5px #b8b8b8,
+                0 0 10px #b8b8b8,
+                0 0 20px #888888,
+                0 0 35px #666666;
 
             transition:
                 box-shadow 0.3s ease;
         }
 
-        /* Kreis */
         .instagram-icon::before {
             content: "";
 
             width: 16px;
             height: 16px;
 
-            border: 3px solid white;
+            border: 3px solid #b8b8b8;
 
             border-radius: 50%;
         }
 
-        /* Punkt */
         .instagram-icon::after {
             content: "";
 
@@ -407,16 +357,12 @@
             top: 7px;
             right: 7px;
 
-            background: white;
+            background: #b8b8b8;
 
             border-radius: 50%;
 
-            box-shadow: 0 0 5px white;
+            box-shadow: 0 0 5px #b8b8b8;
         }
-
-        /* =========================================
-           INSTAGRAM HOVER
-           ========================================= */
 
         .kontakt-item a:hover {
             transform: scale(1.15);
@@ -426,15 +372,11 @@
 
         .kontakt-item a:hover .instagram-icon {
             box-shadow:
-                0 0 5px white,
-                0 0 15px #ff00cc,
-                0 0 30px #ff00cc,
-                0 0 60px #ff00cc;
+                0 0 5px #d0d0d0,
+                0 0 15px #b8b8b8,
+                0 0 30px #999999,
+                0 0 55px #777777;
         }
-
-        /* =========================================
-           ANIMATIONEN
-           ========================================= */
 
         @keyframes flicker {
             0%,
@@ -516,119 +458,82 @@
             }
         }
 
-        /* =========================================
-           HANDY
-           ========================================= */
-
         @media (max-width: 600px) {
 
             .container {
                 width: 100%;
-
                 max-width: 100%;
-
                 min-height: 100vh;
-
                 padding: 20px 8px;
             }
 
-            /* Großer Text */
             .neon {
                 width: 100%;
-
+                max-width: 100%;
                 font-size: clamp(38px, 15vw, 80px);
-
                 line-height: 0.95;
-
                 letter-spacing: 0;
-
                 margin: 0;
             }
 
             .girlfriend {
                 font-size: 0.65em;
-
                 white-space: nowrap;
             }
 
-            /* Englischer Satz */
             .english-question {
                 margin-top: 28px;
-
                 padding: 0 5px;
-
                 font-size: clamp(19px, 6vw, 40px);
-
                 letter-spacing: 0;
-
                 white-space: nowrap;
             }
 
-            /* Spanischer Haupttext */
             .spanisch {
                 margin-top: 18px;
-
                 padding: 0 5px;
-
                 font-size: clamp(19px, 6vw, 40px);
-
                 letter-spacing: 1px;
             }
 
-            /* Spanischer zweiter Text */
             .spanisch-zweit {
                 margin-top: 12px;
-
                 padding: 0 5px;
-
                 font-size: clamp(17px, 5vw, 30px);
-
                 letter-spacing: 0;
             }
 
-            /* Instagram */
             .kontakt {
                 margin-top: 25px;
-
                 padding-top: 0;
-
                 gap: 35px;
             }
 
             .kontakt-item {
                 gap: 7px;
-
                 font-size: 18px;
             }
 
             .instagram-icon {
                 width: 40px;
                 height: 40px;
-
                 border-width: 2px;
-
                 border-radius: 10px;
             }
 
             .instagram-icon::before {
                 width: 14px;
                 height: 14px;
-
                 border-width: 2px;
             }
 
             .instagram-icon::after {
                 width: 4px;
                 height: 4px;
-
                 top: 6px;
                 right: 6px;
             }
         }
-
-        /* =========================================
-           SEHR KLEINE HANDYS
-           ========================================= */
 
         @media (max-width: 380px) {
 
@@ -638,7 +543,6 @@
 
             .neon {
                 font-size: clamp(34px, 14vw, 65px);
-
                 line-height: 0.95;
             }
 
@@ -648,31 +552,26 @@
 
             .english-question {
                 margin-top: 24px;
-
                 font-size: 17px;
             }
 
             .spanisch {
                 margin-top: 16px;
-
                 font-size: 18px;
             }
 
             .spanisch-zweit {
                 margin-top: 10px;
-
                 font-size: 16px;
             }
 
             .kontakt {
                 margin-top: 22px;
-
                 gap: 22px;
             }
 
             .kontakt-item {
                 gap: 5px;
-
                 font-size: 16px;
             }
 
@@ -681,10 +580,6 @@
                 height: 36px;
             }
         }
-
-        /* =========================================
-           HANDY QUERFORMAT
-           ========================================= */
 
         @media (max-height: 500px) and (orientation: landscape) {
 
@@ -698,19 +593,16 @@
 
             .english-question {
                 margin-top: 15px;
-
                 font-size: clamp(16px, 4vh, 30px);
             }
 
             .spanisch {
                 margin-top: 12px;
-
                 font-size: clamp(16px, 4vh, 30px);
             }
 
             .spanisch-zweit {
                 margin-top: 8px;
-
                 font-size: clamp(14px, 3vh, 24px);
             }
 
@@ -725,10 +617,6 @@
 
     <main class="container">
 
-        <!-- =====================================
-             GROSSER ENGLISCHER TEXT
-             ===================================== -->
-
         <h1 class="neon">
             <span>WE</span>
             <span>ARE</span>
@@ -736,19 +624,9 @@
             <span class="girlfriend">SINGLE!</span>
         </h1>
 
-
-        <!-- =====================================
-             ENGLISCHE FRAGE
-             ===================================== -->
-
         <div class="english-question">
             Interested in getting to know us?
         </div>
-
-
-        <!-- =====================================
-             SPANISCHER TEXT
-             ===================================== -->
 
         <div class="spanisch">
             Los dos estamos solteros!
@@ -758,14 +636,8 @@
             ¿Te interesa conocernos?
         </div>
 
-
-        <!-- =====================================
-             INSTAGRAM
-             ===================================== -->
-
         <div class="kontakt">
 
-            <!-- ME / YO -->
             <div class="kontakt-item">
 
                 <a
@@ -783,8 +655,6 @@
 
             </div>
 
-
-            <!-- HER / ELLA -->
             <div class="kontakt-item">
 
                 <a
@@ -808,4 +678,3 @@
 
 </body>
 </html>
-```
