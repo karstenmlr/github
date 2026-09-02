@@ -1,224 +1,25 @@
-Ah, jetzt verstehe ich 👍 Du suchst einfach Webseiten, die bereits fertige Sprüche anzeigen, damit du z. B. direkt den Link in einen QR-Code packen kannst.
-
-Hier sind gute Beispiele:
-
-    Spruch des Tages – Zufällige Sprüche – zeigt viele zufällige Sprüche an, darunter lustige, schöne und nachdenkliche.
-
-    Aphorismen.de – riesige Sammlung mit über 220.000 Sprüchen, Aphorismen und Gedichten; dort gibt es auch einen „Spruch des Tages“ und eine Zufallsfunktion.
-
-    Spruch-Archiv – über 80.000 Sprüche und ebenfalls einen Zufallsspruch.
-
-    Zitate-Web – über 40.000 Zitate und einen täglich wechselnden Spruch.
-
-    Die Sprüche – tausende Sprüche nach Kategorien wie Liebe, Leben, Freundschaft, Motivation usw.
-
-    Suffbilder – Witze & Sprüche – eher für lustige/ungewöhnliche Sprüche und Witze.
-
-Für einen QR-Code würde ich besonders spruch-des-tages.de/zufaellige-sprueche/ nehmen, wenn nach dem Scannen direkt eine Seite mit vielen Sprüchen erscheinen soll.
-
-Wenn du möchtest, kann ich dir auch
-20–30 solcher direkten Links raussuchen, z. B.
-nur lustige Sprüche,
-Lebensweisheiten,
-Motivationssprüche oder
-Liebessprüche.
-
-wie kann ich mit github page seien internetseite erstellen
-
-Ja, das geht sehr einfach – und für deine QR-Code-Idee ist GitHub Pages sogar ziemlich gut. Du brauchst dafür keinen eigenen Webserver. GitHub stellt deine HTML/CSS/JavaScript-Dateien kostenlos als Webseite bereit.
-Variante für dich: eine einfache Sprüche-Seite
-
-Zum Beispiel könnte deine Seite später so aussehen:
-
-    ✨ Dein Spruch des Tages
-
-    „Das Leben ist zu kurz, um auf morgen zu warten.“
-
-    🔄 Neuer Spruch
-
-Und die URL könnte z. B. sein:
-
-deinname.github.io
-Schritt für Schritt
-
-1. GitHub-Konto erstellen/anmelden
-
-Gehe zu GitHub und melde dich an.
-
-2. Neues Repository erstellen
-
-Klicke auf New repository.
-
-Wenn dein Benutzername beispielsweise max123 ist, nennst du das Repository:
-
-max123.github.io
-
-Genau dieses Namensschema verwendet GitHub für eine persönliche GitHub-Pages-Seite.
-
-3. Datei index.html erstellen
-
-In deinem neuen Repository:
-
-Add file → Create new file
-
-Als Dateiname:
-
-index.html
-
-Dort kommt dann dein Webseiten-Code hinein.
-
-Zum Beispiel kann ich dir eine komplette Seite erstellen, die:
-
-    💬 schöne Sprüche anzeigt
-
-    🔀 bei jedem Öffnen einen zufälligen Spruch auswählt
-
-    📱 perfekt für Handy/QR-Code optimiert ist
-
-    ✨ schön aussieht
-
-    🔄 einen „Neuer Spruch“-Button hat
-
-    ❤️ deine eigenen Sprüche enthält
-
-4. GitHub Pages einschalten
-
-Im Repository:
-
-Settings → Pages → Build and deployment
-
-Bei Source wählst du Deploy from a branch und anschließend z. B. main aus. GitHub beschreibt diesen Ablauf auch in der offiziellen Anleitung.
-
-Danach erreichst du die Seite unter:
-
-https://DEINUSERNAME.github.io
-
-Es kann nach Änderungen ein paar Minuten dauern, bis die Seite online ist.
-
-Wenn du möchtest, können wir das jetzt direkt zusammen machen.
-Ich kann dir den
-fertigen index.html-Code für eine richtig schöne Sprüche-Seite schreiben, den du nur noch in GitHub einfügst. Du brauchst dafür keine Programmierkenntnisse.
-
-machst du mir mal html code für die index.html
-
-Klar! 😊 Hier ist eine komplette index.html, die du direkt in dein GitHub-Repository kopieren kannst. Sie ist für Handys optimiert und zeigt bei jedem Laden einen zufälligen Spruch.
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Dein Spruch ✨</title>
-
+    <title>Das ist nicht meine Freundin!</title>
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
-            min-height: 100vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-
             font-family: Arial, sans-serif;
-
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 600px;
-            text-align: center;
-        }
-
-        .emoji {
-            font-size: 50px;
-            margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 28px;
-            margin-bottom: 30px;
-        }
-
-        .spruch-box {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 40px 30px;
-            border-radius: 20px;
-
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-
-            backdrop-filter: blur(10px);
-        }
-
-        #spruch {
-            font-size: 25px;
-            line-height: 1.5;
-            font-style: italic;
-        }
-
-        #autor {
-            margin-top: 20px;
-            font-size: 16px;
-            opacity: 0.8;
-        }
-
-        button {
-            margin-top: 30px;
-            padding: 14px 25px;
-
-            border: none;
-            border-radius: 30px;
-
-            background: white;
-            color: #667eea;
-
-            font-size: 16px;
-            font-weight: bold;
-
-            cursor: pointer;
-
-            transition: 0.2s;
-        }
-
-        button:hover {
-            transform: scale(1.05);
-        }
-
-        .footer {
-            margin-top: 25px;
-            font-size: 13px;
-            opacity: 0.7;
+            text-align: center;
         }
     </style>
 </head>
-
 <body>
-
-    <div class="container">
-
-        <div class="emoji">✨</div>
-
-        <h1>Dein Spruch für heute</h1>
-
-        <div class="spruch-box">
-
-            <div id="spruch">
-                Lade Spruch...
-            </div>
-
-            <div id="autor"></div>
-
-            <button onclick="neuerSpruch()">
-                🔄 Neuer Spruch
-            </button>
-
-        </div>
-
-        <div class="foo
-
-
+    <h1>Das ist nicht meine Freundin!</h1>
+</body>
+</html>
