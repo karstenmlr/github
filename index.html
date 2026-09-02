@@ -129,7 +129,7 @@
         }
 
         /* =========================================
-           HAUPTTEXT
+           GROSSER ENGLISCHER HAUPTTEXT
            ========================================= */
 
         .neon {
@@ -165,14 +165,51 @@
 
         .neon span {
             display: block;
+
             width: 100%;
+
             text-align: center;
         }
 
-        /* SINGLE etwas kleiner */
         .girlfriend {
             font-size: 0.78em;
+
             white-space: nowrap;
+        }
+
+        /* =========================================
+           ENGLISCHER SATZ
+           ========================================= */
+
+        .english-question {
+            width: 100%;
+
+            margin-top: 38px;
+
+            padding: 0 10px;
+
+            font-size: clamp(24px, 4.5vw, 55px);
+
+            line-height: 1.1;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            color: white;
+
+            text-align: center;
+
+            white-space: nowrap;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 10px #ff00cc,
+                0 0 20px #ff00cc,
+                0 0 40px #ff00cc;
+
+            animation:
+                englishGlow 2.5s ease-in-out infinite alternate;
         }
 
         /* =========================================
@@ -182,7 +219,7 @@
         .spanisch {
             width: 100%;
 
-            margin-top: 38px;
+            margin-top: 18px;
 
             padding: 0 10px;
 
@@ -247,7 +284,6 @@
         .kontakt {
             width: 100%;
 
-            /* Etwas mehr Abstand zum spanischen Text */
             margin-top: 30px;
 
             padding-top: 0;
@@ -261,7 +297,10 @@
             gap: 70px;
         }
 
-        /* ME / HER */
+        /* =========================================
+           ME / HER
+           ========================================= */
+
         .kontakt-item {
             display: flex;
 
@@ -269,13 +308,16 @@
 
             gap: 10px;
 
-            color: white;
-
             font-size: 24px;
 
             font-weight: 700;
 
             letter-spacing: 1px;
+        }
+
+        /* Englische Wörter = PINK */
+        .english-word {
+            color: white;
 
             text-shadow:
                 0 0 5px white,
@@ -283,7 +325,20 @@
                 0 0 20px #ff00cc;
         }
 
-        /* Instagram Link */
+        /* Spanische Wörter = BLAU */
+        .spanish-word {
+            color: white;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 10px #00eaff,
+                0 0 20px #00eaff;
+        }
+
+        /* =========================================
+           INSTAGRAM LINK
+           ========================================= */
+
         .kontakt-item a {
             display: inline-flex;
 
@@ -328,7 +383,7 @@
                 box-shadow 0.3s ease;
         }
 
-        /* Kreis in der Mitte */
+        /* Kreis */
         .instagram-icon::before {
             content: "";
 
@@ -340,7 +395,7 @@
             border-radius: 50%;
         }
 
-        /* Punkt oben rechts */
+        /* Punkt */
         .instagram-icon::after {
             content: "";
 
@@ -359,9 +414,13 @@
             box-shadow: 0 0 5px white;
         }
 
-        /* Hover */
+        /* =========================================
+           INSTAGRAM HOVER
+           ========================================= */
+
         .kontakt-item a:hover {
             transform: scale(1.15);
+
             opacity: 0.9;
         }
 
@@ -390,6 +449,28 @@
             21%,
             62% {
                 opacity: 0.65;
+            }
+        }
+
+        @keyframes englishGlow {
+            from {
+                opacity: 0.75;
+
+                text-shadow:
+                    0 0 5px white,
+                    0 0 10px #ff00cc,
+                    0 0 20px #ff00cc,
+                    0 0 30px #ff00cc;
+            }
+
+            to {
+                opacity: 1;
+
+                text-shadow:
+                    0 0 5px white,
+                    0 0 15px #ff00cc,
+                    0 0 30px #ff00cc,
+                    0 0 50px #ff00cc;
             }
         }
 
@@ -443,6 +524,7 @@
 
             .container {
                 width: 100%;
+
                 max-width: 100%;
 
                 min-height: 100vh;
@@ -450,9 +532,9 @@
                 padding: 20px 8px;
             }
 
+            /* Großer Text */
             .neon {
                 width: 100%;
-                max-width: 100%;
 
                 font-size: clamp(38px, 15vw, 80px);
 
@@ -469,9 +551,22 @@
                 white-space: nowrap;
             }
 
-            /* Erster spanischer Text */
-            .spanisch {
+            /* Englischer Satz */
+            .english-question {
                 margin-top: 28px;
+
+                padding: 0 5px;
+
+                font-size: clamp(19px, 6vw, 40px);
+
+                letter-spacing: 0;
+
+                white-space: nowrap;
+            }
+
+            /* Spanischer Haupttext */
+            .spanisch {
+                margin-top: 18px;
 
                 padding: 0 5px;
 
@@ -480,7 +575,7 @@
                 letter-spacing: 1px;
             }
 
-            /* Zweiter spanischer Text */
+            /* Spanischer zweiter Text */
             .spanisch-zweit {
                 margin-top: 12px;
 
@@ -491,7 +586,7 @@
                 letter-spacing: 0;
             }
 
-            /* Instagram etwas weiter vom Text entfernt */
+            /* Instagram */
             .kontakt {
                 margin-top: 25px;
 
@@ -551,8 +646,14 @@
                 font-size: 0.60em;
             }
 
-            .spanisch {
+            .english-question {
                 margin-top: 24px;
+
+                font-size: 17px;
+            }
+
+            .spanisch {
+                margin-top: 16px;
 
                 font-size: 18px;
             }
@@ -565,8 +666,6 @@
 
             .kontakt {
                 margin-top: 22px;
-
-                padding-top: 0;
 
                 gap: 22px;
             }
@@ -597,8 +696,14 @@
                 font-size: clamp(30px, 10vh, 70px);
             }
 
-            .spanisch {
+            .english-question {
                 margin-top: 15px;
+
+                font-size: clamp(16px, 4vh, 30px);
+            }
+
+            .spanisch {
+                margin-top: 12px;
 
                 font-size: clamp(16px, 4vh, 30px);
             }
@@ -611,8 +716,6 @@
 
             .kontakt {
                 margin-top: 20px;
-
-                padding-top: 0;
             }
         }
     </style>
@@ -623,7 +726,7 @@
     <main class="container">
 
         <!-- =====================================
-             HAUPTTEXT
+             GROSSER ENGLISCHER TEXT
              ===================================== -->
 
         <h1 class="neon">
@@ -632,6 +735,15 @@
             <span>BOTH</span>
             <span class="girlfriend">SINGLE!</span>
         </h1>
+
+
+        <!-- =====================================
+             ENGLISCHE FRAGE
+             ===================================== -->
+
+        <div class="english-question">
+            Interested in getting to know us?
+        </div>
 
 
         <!-- =====================================
@@ -665,7 +777,9 @@
                     <span class="instagram-icon"></span>
                 </a>
 
-                <span>Me (Yo)</span>
+                <span class="english-word">Me</span>
+
+                <span class="spanish-word">(Yo)</span>
 
             </div>
 
@@ -682,7 +796,9 @@
                     <span class="instagram-icon"></span>
                 </a>
 
-                <span>Her (Ella)</span>
+                <span class="english-word">Her</span>
+
+                <span class="spanish-word">(Ella)</span>
 
             </div>
 
