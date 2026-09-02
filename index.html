@@ -50,7 +50,7 @@
 
 
         /* =========================================
-           NEON-LICHTER IM HINTERGRUND
+           PINKES NEON-LICHT
            ========================================= */
 
         body::before {
@@ -78,6 +78,10 @@
             pointer-events: none;
         }
 
+
+        /* =========================================
+           BLAUES NEON-LICHT
+           ========================================= */
 
         body::after {
             content: "";
@@ -122,11 +126,9 @@
             padding: 30px 20px;
 
             display: flex;
-
             flex-direction: column;
 
             justify-content: center;
-
             align-items: center;
 
             text-align: center;
@@ -134,7 +136,7 @@
 
 
         /* =========================================
-           ENGLISCHER TEXT
+           ENGLISCHER HAUPTTEXT
            ========================================= */
 
         .neon {
@@ -178,7 +180,7 @@
         }
 
 
-        /* Das lange Wort etwas kleiner */
+        /* Langes Wort etwas kleiner */
         .girlfriend {
             font-size: 0.78em;
         }
@@ -213,7 +215,108 @@
                 0 0 20px #00eaff,
                 0 0 40px #00eaff;
 
-            animation: spanishGlow 2.5s ease-in-out infinite alternate;
+            animation:
+                spanishGlow 2.5s ease-in-out infinite alternate;
+        }
+
+
+        /* =========================================
+           INSTAGRAM
+           ========================================= */
+
+        .kontakt {
+            margin-top: 40px;
+        }
+
+
+        .kontakt a {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+        }
+
+
+        .instagram-icon {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 3px solid white;
+
+            border-radius: 12px;
+
+            position: relative;
+
+            box-shadow:
+                0 0 5px white,
+                0 0 10px #ff00cc,
+                0 0 20px #ff00cc,
+                0 0 40px #ff00cc;
+
+            transition:
+                box-shadow 0.3s ease;
+        }
+
+
+        /* Kleiner Kreis in der Mitte */
+        .instagram-icon::before {
+            content: "";
+
+            width: 16px;
+            height: 16px;
+
+            border: 3px solid white;
+
+            border-radius: 50%;
+        }
+
+
+        /* Kleiner Punkt oben rechts */
+        .instagram-icon::after {
+            content: "";
+
+            position: absolute;
+
+            width: 5px;
+            height: 5px;
+
+            top: 7px;
+            right: 7px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 5px white;
+        }
+
+
+        .kontakt a:hover {
+            transform: scale(1.15);
+
+            opacity: 0.9;
+        }
+
+
+        .kontakt a:hover .instagram-icon {
+            box-shadow:
+                0 0 5px white,
+                0 0 15px #ff00cc,
+                0 0 30px #ff00cc,
+                0 0 60px #ff00cc;
         }
 
 
@@ -295,6 +398,7 @@
 
             .container {
                 width: 100%;
+                max-width: 100%;
 
                 min-height: 100vh;
 
@@ -304,6 +408,7 @@
 
             .neon {
                 width: 100%;
+                max-width: 100%;
 
                 font-size: clamp(38px, 15vw, 80px);
 
@@ -325,11 +430,6 @@
 
 
             .girlfriend {
-                /*
-                 * Wichtig:
-                 * Das lange Wort wird auf dem Handy
-                 * deutlich kleiner dargestellt.
-                 */
                 font-size: 0.65em;
 
                 white-space: nowrap;
@@ -338,6 +438,7 @@
 
             .spanisch {
                 width: 100%;
+                max-width: 100%;
 
                 margin-top: 28px;
 
@@ -350,6 +451,38 @@
                 letter-spacing: 1px;
 
                 text-align: center;
+            }
+
+
+            .kontakt {
+                margin-top: 30px;
+            }
+
+
+            .instagram-icon {
+                width: 40px;
+                height: 40px;
+
+                border-width: 2px;
+
+                border-radius: 10px;
+            }
+
+
+            .instagram-icon::before {
+                width: 14px;
+                height: 14px;
+
+                border-width: 2px;
+            }
+
+
+            .instagram-icon::after {
+                width: 4px;
+                height: 4px;
+
+                top: 6px;
+                right: 6px;
             }
         }
 
@@ -384,6 +517,11 @@
 
                 letter-spacing: 0;
             }
+
+
+            .kontakt {
+                margin-top: 25px;
+            }
         }
 
 
@@ -413,7 +551,13 @@
 
                 font-size: clamp(16px, 4vh, 30px);
             }
+
+
+            .kontakt {
+                margin-top: 20px;
+            }
         }
+
     </style>
 </head>
 
@@ -423,17 +567,14 @@
     <main class="container">
 
         <!-- =====================================
-             HAUPTTEXT
+             ENGLISCHER TEXT
              ===================================== -->
 
         <h1 class="neon">
 
             <span>She</span>
-
             <span>Is</span>
-
             <span>Not</span>
-
             <span>My</span>
 
             <span class="girlfriend">
@@ -449,6 +590,26 @@
 
         <div class="spanisch">
             ¡Ella no es mi novia!
+        </div>
+
+
+        <!-- =====================================
+             INSTAGRAM
+             ===================================== -->
+
+        <div class="kontakt">
+
+            <a
+                href="https://www.instagram.com/_karsten.mueller/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+            >
+
+                <span class="instagram-icon"></span>
+
+            </a>
+
         </div>
 
     </main>
