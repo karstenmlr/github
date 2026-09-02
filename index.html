@@ -1,32 +1,630 @@
-<!-- =====================================
-     INSTAGRAM-KONTAKTE
-     ===================================== -->
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div class="kontakt">
+    <title>We are both single!</title>
 
-    <!-- ME -->
-    <a
-        href="https://www.instagram.com/_karsten.mueller/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram Me"
-    >
-        <span class="instagram-icon"></span>
-    </a>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    <span class="kontakt-name">Me</span>
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(255, 0, 204, 0.12),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 85% 80%,
+                    rgba(0, 234, 255, 0.10),
+                    transparent 35%
+                ),
+                #05000a;
+        }
+
+        /* =========================================
+           NEON LICHT
+           ========================================= */
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            left: -200px;
+            top: -200px;
+
+            border-radius: 50%;
+
+            background: #ff00cc;
+
+            filter: blur(150px);
+
+            opacity: 0.30;
+
+            animation:
+                pinkLight 7s ease-in-out infinite alternate;
+
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 450px;
+            height: 450px;
+
+            right: -200px;
+            bottom: -200px;
+
+            border-radius: 50%;
+
+            background: #00eaff;
+
+            filter: blur(150px);
+
+            opacity: 0.25;
+
+            animation:
+                blueLight 8s ease-in-out infinite alternate;
+
+            pointer-events: none;
+        }
+
+        /* =========================================
+           HAUPT CONTAINER
+           ========================================= */
+
+        .container {
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+            max-width: 1600px;
+
+            min-height: 100vh;
+
+            padding: 30px 20px;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        /* =========================================
+           HAUPTTEXT
+           ========================================= */
+
+        .neon {
+            width: 100%;
+            max-width: 1500px;
+
+            margin: 0;
+            padding: 0;
+
+            font-size: clamp(55px, 11vw, 150px);
+
+            line-height: 0.93;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            color: white;
+
+            text-align: center;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 10px #ff00cc,
+                0 0 20px #ff00cc,
+                0 0 40px #ff00cc,
+                0 0 80px #ff00cc;
+
+            animation: flicker 3s infinite;
+        }
+
+        .neon span {
+            display: block;
+
+            width: 100%;
+
+            text-align: center;
+        }
+
+        /* SINGLE etwas kleiner */
+        .girlfriend {
+            font-size: 0.78em;
+        }
+
+        /* =========================================
+           SPANISCH
+           ========================================= */
+
+        .spanisch {
+            width: 100%;
+
+            margin-top: 38px;
+
+            padding: 0 10px;
+
+            font-size: clamp(24px, 4.5vw, 55px);
+
+            line-height: 1.1;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            color: white;
+
+            text-align: center;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 10px #00eaff,
+                0 0 20px #00eaff,
+                0 0 40px #00eaff;
+
+            animation:
+                spanishGlow 2.5s ease-in-out infinite alternate;
+        }
+
+        /* =========================================
+           INSTAGRAM + ME / HER
+           ========================================= */
+
+        .kontakt {
+            margin-top: 40px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 55px;
+        }
+
+        /* Jeweils Instagram + Name als Gruppe */
+        .kontakt-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: white;
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 10px #ff00cc,
+                0 0 20px #ff00cc;
+        }
+
+        .kontakt-item a {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            text-decoration: none;
+
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+        }
+
+        /* =========================================
+           INSTAGRAM ICON
+           ========================================= */
+
+        .instagram-icon {
+            width: 46px;
+            height: 46px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 3px solid white;
+
+            border-radius: 12px;
+
+            position: relative;
+
+            box-shadow:
+                0 0 5px white,
+                0 0 10px #ff00cc,
+                0 0 20px #ff00cc,
+                0 0 40px #ff00cc;
+
+            transition:
+                box-shadow 0.3s ease;
+        }
+
+        /* Kreis in der Mitte */
+        .instagram-icon::before {
+            content: "";
+
+            width: 16px;
+            height: 16px;
+
+            border: 3px solid white;
+
+            border-radius: 50%;
+        }
+
+        /* Punkt oben rechts */
+        .instagram-icon::after {
+            content: "";
+
+            position: absolute;
+
+            width: 5px;
+            height: 5px;
+
+            top: 7px;
+            right: 7px;
+
+            background: white;
+
+            border-radius: 50%;
+
+            box-shadow: 0 0 5px white;
+        }
+
+        /* Hover Effekt */
+        .kontakt-item a:hover {
+            transform: scale(1.15);
+
+            opacity: 0.9;
+        }
+
+        .kontakt-item a:hover .instagram-icon {
+            box-shadow:
+                0 0 5px white,
+                0 0 15px #ff00cc,
+                0 0 30px #ff00cc,
+                0 0 60px #ff00cc;
+        }
+
+        /* =========================================
+           ANIMATIONEN
+           ========================================= */
+
+        @keyframes flicker {
+            0%,
+            18%,
+            22%,
+            63%,
+            100% {
+                opacity: 1;
+            }
+
+            20%,
+            21%,
+            62% {
+                opacity: 0.65;
+            }
+        }
+
+        @keyframes spanishGlow {
+            from {
+                opacity: 0.75;
+
+                text-shadow:
+                    0 0 5px white,
+                    0 0 10px #00eaff,
+                    0 0 20px #00eaff,
+                    0 0 30px #00eaff;
+            }
+
+            to {
+                opacity: 1;
+
+                text-shadow:
+                    0 0 5px white,
+                    0 0 15px #00eaff,
+                    0 0 30px #00eaff,
+                    0 0 50px #00eaff;
+            }
+        }
+
+        @keyframes pinkLight {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(300px, 250px);
+            }
+        }
+
+        @keyframes blueLight {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-300px, -250px);
+            }
+        }
+
+        /* =========================================
+           HANDY
+           ========================================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 100%;
+                max-width: 100%;
+
+                min-height: 100vh;
+
+                padding: 20px 8px;
+            }
+
+            .neon {
+                width: 100%;
+                max-width: 100%;
+
+                font-size: clamp(38px, 15vw, 80px);
+
+                line-height: 0.95;
+
+                letter-spacing: 0;
+
+                margin: 0;
+
+                text-align: center;
+            }
+
+            .neon span {
+                width: 100%;
+
+                text-align: center;
+            }
+
+            .girlfriend {
+                font-size: 0.65em;
+
+                white-space: nowrap;
+            }
+
+            .spanisch {
+                width: 100%;
+                max-width: 100%;
+
+                margin-top: 28px;
+
+                padding: 0 5px;
+
+                font-size: clamp(19px, 6vw, 40px);
+
+                line-height: 1.1;
+
+                letter-spacing: 1px;
+
+                text-align: center;
+            }
+
+            .kontakt {
+                margin-top: 30px;
+
+                gap: 25px;
+            }
+
+            .kontakt-item {
+                gap: 7px;
+
+                font-size: 19px;
+            }
+
+            .instagram-icon {
+                width: 40px;
+                height: 40px;
+
+                border-width: 2px;
+
+                border-radius: 10px;
+            }
+
+            .instagram-icon::before {
+                width: 14px;
+                height: 14px;
+
+                border-width: 2px;
+            }
+
+            .instagram-icon::after {
+                width: 4px;
+                height: 4px;
+
+                top: 6px;
+                right: 6px;
+            }
+        }
+
+        /* =========================================
+           SEHR KLEINE HANDYS
+           ========================================= */
+
+        @media (max-width: 380px) {
+
+            .container {
+                padding: 15px 5px;
+            }
+
+            .neon {
+                font-size: clamp(34px, 14vw, 65px);
+
+                line-height: 0.95;
+            }
+
+            .girlfriend {
+                font-size: 0.60em;
+            }
+
+            .spanisch {
+                margin-top: 24px;
+
+                font-size: 18px;
+
+                letter-spacing: 0;
+            }
+
+            .kontakt {
+                margin-top: 25px;
+
+                gap: 18px;
+            }
+
+            .kontakt-item {
+                gap: 5px;
+
+                font-size: 17px;
+            }
+
+            .instagram-icon {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        /* =========================================
+           HANDY QUERFORMAT
+           ========================================= */
+
+        @media (max-height: 500px) and (orientation: landscape) {
+
+            .container {
+                padding: 10px;
+            }
+
+            .neon {
+                font-size: clamp(30px, 10vh, 70px);
+            }
+
+            .girlfriend {
+                font-size: 0.70em;
+            }
+
+            .spanisch {
+                margin-top: 15px;
+
+                font-size: clamp(16px, 4vh, 30px);
+            }
+
+            .kontakt {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- HAUPTTEXT -->
+        <h1 class="neon">
+            <span>WE</span>
+            <span>ARE</span>
+            <span>BOTH</span>
+            <span class="girlfriend">SINGLE!</span>
+        </h1>
+
+        <!-- SPANISCH -->
+        <div class="spanisch">
+            Los dos estamos solteros!
+        </div>
+
+        <!-- INSTAGRAM -->
+        <div class="kontakt">
+
+            <!-- ME -->
+            <div class="kontakt-item">
+
+                <a
+                    href="https://www.instagram.com/_karsten.mueller/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram Me"
+                >
+                    <span class="instagram-icon"></span>
+                </a>
+
+                <span>Me</span>
+
+            </div>
 
 
-    <!-- HER -->
-    <a
-        href="https://www.instagram.com/teiiiinaaaaa/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram Her"
-    >
-        <span class="instagram-icon"></span>
-    </a>
+            <!-- HER -->
+            <div class="kontakt-item">
 
-    <span class="kontakt-name">Her</span>
+                <a
+                    href="https://www.instagram.com/teiiiinaaaaa/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram Her"
+                >
+                    <span class="instagram-icon"></span>
+                </a>
 
-</div>
+                <span>Her</span>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
+```
