@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>We are both single! Interested in getting to know us?</title>
+    <title>We are both single!</title>
 
     <style>
         * {
@@ -167,13 +167,14 @@
             text-align: center;
         }
 
-        /* SINGLE etwas kleiner */
         .girlfriend {
             font-size: 0.78em;
+
+            white-space: nowrap;
         }
 
         /* =========================================
-           SPANISCH
+           SPANISCHER TEXT
            ========================================= */
 
         .spanisch {
@@ -205,12 +206,43 @@
                 spanishGlow 2.5s ease-in-out infinite alternate;
         }
 
+        .spanisch-zweit {
+            width: 100%;
+
+            margin-top: 15px;
+
+            padding: 0 10px;
+
+            font-size: clamp(18px, 3vw, 38px);
+
+            line-height: 1.1;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+            color: white;
+
+            text-align: center;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 10px #00eaff,
+                0 0 20px #00eaff;
+
+            animation:
+                spanishGlow 3s ease-in-out infinite alternate;
+        }
+
         /* =========================================
-           INSTAGRAM + ME / HER
+           INSTAGRAM BEREICH
            ========================================= */
 
         .kontakt {
-            margin-top: 40px;
+            width: 100%;
+
+            margin-top: auto;
+            padding-top: 35px;
 
             display: flex;
 
@@ -218,10 +250,9 @@
 
             align-items: center;
 
-            gap: 55px;
+            gap: 70px;
         }
 
-        /* Jeweils Instagram + Name als Gruppe */
         .kontakt-item {
             display: flex;
 
@@ -287,7 +318,6 @@
                 box-shadow 0.3s ease;
         }
 
-        /* Kreis in der Mitte */
         .instagram-icon::before {
             content: "";
 
@@ -299,7 +329,6 @@
             border-radius: 50%;
         }
 
-        /* Punkt oben rechts */
         .instagram-icon::after {
             content: "";
 
@@ -318,7 +347,6 @@
             box-shadow: 0 0 5px white;
         }
 
-        /* Hover Effekt */
         .kontakt-item a:hover {
             transform: scale(1.15);
 
@@ -421,14 +449,6 @@
                 letter-spacing: 0;
 
                 margin: 0;
-
-                text-align: center;
-            }
-
-            .neon span {
-                width: 100%;
-
-                text-align: center;
             }
 
             .girlfriend {
@@ -438,32 +458,37 @@
             }
 
             .spanisch {
-                width: 100%;
-                max-width: 100%;
-
                 margin-top: 28px;
 
                 padding: 0 5px;
 
                 font-size: clamp(19px, 6vw, 40px);
 
-                line-height: 1.1;
-
                 letter-spacing: 1px;
+            }
 
-                text-align: center;
+            .spanisch-zweit {
+                margin-top: 12px;
+
+                padding: 0 5px;
+
+                font-size: clamp(17px, 5vw, 30px);
+
+                letter-spacing: 0;
             }
 
             .kontakt {
-                margin-top: 30px;
+                margin-top: auto;
 
-                gap: 25px;
+                padding-top: 25px;
+
+                gap: 35px;
             }
 
             .kontakt-item {
                 gap: 7px;
 
-                font-size: 19px;
+                font-size: 18px;
             }
 
             .instagram-icon {
@@ -515,20 +540,24 @@
                 margin-top: 24px;
 
                 font-size: 18px;
+            }
 
-                letter-spacing: 0;
+            .spanisch-zweit {
+                margin-top: 10px;
+
+                font-size: 16px;
             }
 
             .kontakt {
-                margin-top: 25px;
+                padding-top: 20px;
 
-                gap: 18px;
+                gap: 22px;
             }
 
             .kontakt-item {
                 gap: 5px;
 
-                font-size: 17px;
+                font-size: 16px;
             }
 
             .instagram-icon {
@@ -551,18 +580,20 @@
                 font-size: clamp(30px, 10vh, 70px);
             }
 
-            .girlfriend {
-                font-size: 0.70em;
-            }
-
             .spanisch {
                 margin-top: 15px;
 
                 font-size: clamp(16px, 4vh, 30px);
             }
 
+            .spanisch-zweit {
+                margin-top: 8px;
+
+                font-size: clamp(14px, 3vh, 24px);
+            }
+
             .kontakt {
-                margin-top: 20px;
+                padding-top: 15px;
             }
         }
     </style>
@@ -580,15 +611,20 @@
             <span class="girlfriend">SINGLE!</span>
         </h1>
 
-        <!-- SPANISCH -->
+        <!-- ERSTER SPANISCHER TEXT -->
         <div class="spanisch">
             Los dos estamos solteros!
         </div>
 
-        <!-- INSTAGRAM -->
+        <!-- ZWEITER SPANISCHER TEXT -->
+        <div class="spanisch-zweit">
+            ¿Te interesa conocernos?
+        </div>
+
+        <!-- INSTAGRAM UNTEN MITTIG -->
         <div class="kontakt">
 
-            <!-- ME -->
+            <!-- ME / YO -->
             <div class="kontakt-item">
 
                 <a
@@ -600,12 +636,11 @@
                     <span class="instagram-icon"></span>
                 </a>
 
-                <span>Me</span>
+                <span>Me (Yo)</span>
 
             </div>
 
-
-            <!-- HER -->
+            <!-- HER / ELLA -->
             <div class="kontakt-item">
 
                 <a
@@ -617,7 +652,7 @@
                     <span class="instagram-icon"></span>
                 </a>
 
-                <span>Her</span>
+                <span>Her (Ella)</span>
 
             </div>
 
