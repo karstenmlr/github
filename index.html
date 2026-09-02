@@ -71,10 +71,10 @@
             text-align: center;
         }
 
+        /* Englischer Haupttext */
         .neon {
             margin: 0;
 
-            /* Passt sich automatisch an Handy/Desktop an */
             font-size: clamp(55px, 12vw, 150px);
 
             line-height: 0.95;
@@ -98,6 +98,25 @@
             display: block;
         }
 
+        /* Spanischer Text */
+        .spanisch {
+            margin-top: 35px;
+
+            font-size: clamp(25px, 5vw, 55px);
+            font-weight: 700;
+            letter-spacing: 3px;
+
+            color: white;
+
+            text-shadow:
+                0 0 5px white,
+                0 0 10px #00eaff,
+                0 0 20px #00eaff,
+                0 0 40px #00eaff;
+
+            animation: spanischGlow 2.5s infinite alternate ease-in-out;
+        }
+
         @keyframes flackern {
             0%, 18%, 22%, 63%, 100% {
                 opacity: 1;
@@ -105,6 +124,18 @@
 
             20%, 21%, 62% {
                 opacity: 0.65;
+            }
+        }
+
+        @keyframes spanischGlow {
+            from {
+                opacity: 0.75;
+                transform: scale(1);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.02);
             }
         }
 
@@ -138,6 +169,12 @@
                 font-size: clamp(50px, 17vw, 90px);
                 letter-spacing: 1px;
             }
+
+            .spanisch {
+                margin-top: 25px;
+                font-size: clamp(22px, 6vw, 40px);
+                letter-spacing: 1px;
+            }
         }
     </style>
 </head>
@@ -145,13 +182,21 @@
 <body>
 
     <div class="container">
+
+        <!-- Englischer Text -->
         <h1 class="neon">
             <span>she</span>
             <span>is</span>
             <span>not</span>
             <span>my</span>
-            <span>girlfiend!</span>
+            <span>girlfriend!</span>
         </h1>
+
+        <!-- Spanischer Text -->
+        <div class="spanisch">
+            ¡Ella no es mi novia!
+        </div>
+
     </div>
 
 </body>
