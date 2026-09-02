@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>We are both single!</title>
+    <title>We Are Both Single!</title>
 
     <style>
         * {
@@ -46,7 +46,7 @@
         }
 
         /* =========================================
-           NEON LICHT
+           PINKES NEON-LICHT
            ========================================= */
 
         body::before {
@@ -74,6 +74,10 @@
             pointer-events: none;
         }
 
+        /* =========================================
+           BLAUES NEON-LICHT
+           ========================================= */
+
         body::after {
             content: "";
 
@@ -100,7 +104,7 @@
         }
 
         /* =========================================
-           HAUPT CONTAINER
+           HAUPT-CONTAINER
            ========================================= */
 
         .container {
@@ -167,6 +171,7 @@
             text-align: center;
         }
 
+        /* SINGLE etwas kleiner */
         .girlfriend {
             font-size: 0.78em;
 
@@ -174,7 +179,7 @@
         }
 
         /* =========================================
-           SPANISCHER TEXT
+           ERSTER SPANISCHER TEXT
            ========================================= */
 
         .spanisch {
@@ -206,10 +211,14 @@
                 spanishGlow 2.5s ease-in-out infinite alternate;
         }
 
+        /* =========================================
+           ZWEITER SPANISCHER TEXT
+           ========================================= */
+
         .spanisch-zweit {
             width: 100%;
 
-            margin-top: 15px;
+            margin-top: 14px;
 
             padding: 0 10px;
 
@@ -235,14 +244,16 @@
         }
 
         /* =========================================
-           INSTAGRAM BEREICH
+           INSTAGRAM
            ========================================= */
 
         .kontakt {
             width: 100%;
 
-            margin-top: auto;
-            padding-top: 35px;
+            /* Kleiner Abstand zum Text */
+            margin-top: 22px;
+
+            padding-top: 0;
 
             display: flex;
 
@@ -253,6 +264,7 @@
             gap: 70px;
         }
 
+        /* ME / HER */
         .kontakt-item {
             display: flex;
 
@@ -274,6 +286,7 @@
                 0 0 20px #ff00cc;
         }
 
+        /* Instagram Link */
         .kontakt-item a {
             display: inline-flex;
 
@@ -318,6 +331,7 @@
                 box-shadow 0.3s ease;
         }
 
+        /* Kreis in der Mitte */
         .instagram-icon::before {
             content: "";
 
@@ -329,6 +343,7 @@
             border-radius: 50%;
         }
 
+        /* Punkt oben rechts */
         .instagram-icon::after {
             content: "";
 
@@ -347,6 +362,7 @@
             box-shadow: 0 0 5px white;
         }
 
+        /* Hover */
         .kontakt-item a:hover {
             transform: scale(1.15);
 
@@ -457,6 +473,7 @@
                 white-space: nowrap;
             }
 
+            /* Erster spanischer Text */
             .spanisch {
                 margin-top: 28px;
 
@@ -467,6 +484,7 @@
                 letter-spacing: 1px;
             }
 
+            /* Zweiter spanischer Text */
             .spanisch-zweit {
                 margin-top: 12px;
 
@@ -477,10 +495,11 @@
                 letter-spacing: 0;
             }
 
+            /* Instagram näher an den Text */
             .kontakt {
-                margin-top: auto;
+                margin-top: 18px;
 
-                padding-top: 25px;
+                padding-top: 0;
 
                 gap: 35px;
             }
@@ -549,7 +568,9 @@
             }
 
             .kontakt {
-                padding-top: 20px;
+                margin-top: 15px;
+
+                padding-top: 0;
 
                 gap: 22px;
             }
@@ -593,7 +614,9 @@
             }
 
             .kontakt {
-                padding-top: 15px;
+                margin-top: 12px;
+
+                padding-top: 0;
             }
         }
     </style>
@@ -603,7 +626,10 @@
 
     <main class="container">
 
-        <!-- HAUPTTEXT -->
+        <!-- =====================================
+             HAUPTTEXT
+             ===================================== -->
+
         <h1 class="neon">
             <span>WE</span>
             <span>ARE</span>
@@ -611,17 +637,24 @@
             <span class="girlfriend">SINGLE!</span>
         </h1>
 
-        <!-- ERSTER SPANISCHER TEXT -->
+
+        <!-- =====================================
+             SPANISCH
+             ===================================== -->
+
         <div class="spanisch">
             Los dos estamos solteros!
         </div>
 
-        <!-- ZWEITER SPANISCHER TEXT -->
         <div class="spanisch-zweit">
             ¿Te interesa conocernos?
         </div>
 
-        <!-- INSTAGRAM UNTEN MITTIG -->
+
+        <!-- =====================================
+             INSTAGRAM
+             ===================================== -->
+
         <div class="kontakt">
 
             <!-- ME / YO -->
@@ -639,6 +672,7 @@
                 <span>Me (Yo)</span>
 
             </div>
+
 
             <!-- HER / ELLA -->
             <div class="kontakt-item">
