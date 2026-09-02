@@ -1,203 +1,327 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Das ist nicht meine Freundin!</title>
+    <title>She is not my girlfriend</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
+```
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        font-family: Arial, Helvetica, sans-serif;
+        background: #05000a;
+    }
+
+    /* Pinkes Neon-Licht */
+    body::before {
+        content: "";
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+
+        background: #ff00cc;
+        filter: blur(150px);
+        opacity: 0.3;
+
+        top: -200px;
+        left: -200px;
+
+        animation: bewegen1 7s infinite alternate ease-in-out;
+        pointer-events: none;
+    }
+
+    /* Blaues Neon-Licht */
+    body::after {
+        content: "";
+        position: fixed;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+
+        background: #00eaff;
+        filter: blur(150px);
+        opacity: 0.25;
+
+        bottom: -200px;
+        right: -200px;
+
+        animation: bewegen2 8s infinite alternate ease-in-out;
+        pointer-events: none;
+    }
+
+    .container {
+        position: relative;
+        z-index: 2;
+
+        width: 100%;
+        max-width: 1600px;
+
+        padding: 30px 20px;
+
+        text-align: center;
+    }
+
+    /* Englischer Haupttext */
+    .neon {
+        margin: 0 auto;
+
+        /*
+         * clamp sorgt dafür, dass die Schrift
+         * auf PC groß und auf Handy kleiner wird.
+         */
+        font-size: clamp(45px, 11vw, 150px);
+
+        line-height: 0.95;
+        font-weight: 900;
+
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        color: white;
+
+        /*
+         * Verhindert, dass lange Wörter
+         * über den Bildschirm hinausragen.
+         */
+        max-width: 100%;
+        overflow-wrap: break-word;
+
+        text-shadow:
+            0 0 5px white,
+            0 0 10px #ff00cc,
+            0 0 20px #ff00cc,
+            0 0 40px #ff00cc,
+            0 0 80px #ff00cc;
+
+        animation: flackern 3s infinite;
+    }
+
+    .neon span {
+        display: block;
+        max-width: 100%;
+    }
+
+    /*
+     * GIRLFRIEND bekommt eine eigene Größe.
+     * Dadurch bleibt das lange Wort auch
+     * auf kleinen Handys innerhalb des Displays.
+     */
+    .girlfriend {
+        font-size: 0.78em;
+    }
+
+    /* Spanischer Text */
+    .spanisch {
+        margin-top: 35px;
+
+        font-size: clamp(22px, 4.5vw, 55px);
+        font-weight: 700;
+
+        letter-spacing: 2px;
+
+        color: white;
+
+        max-width: 100%;
+
+        text-shadow:
+            0 0 5px white,
+            0 0 10px #00eaff,
+            0 0 20px #00eaff,
+            0 0 40px #00eaff;
+
+        animation: spanischGlow 2.5s infinite alternate ease-in-out;
+    }
+
+    /* Flackern */
+    @keyframes flackern {
+        0%, 18%, 22%, 63%, 100% {
+            opacity: 1;
         }
 
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
+        20%, 21%, 62% {
+            opacity: 0.65;
         }
+    }
+
+    /* Blaues Leuchten */
+    @keyframes spanischGlow {
+        from {
+            opacity: 0.75;
+            transform: scale(1);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+    }
+
+    /* Hintergrundbewegung */
+    @keyframes bewegen1 {
+        from {
+            transform: translate(0, 0);
+        }
+
+        to {
+            transform: translate(300px, 250px);
+        }
+    }
+
+    @keyframes bewegen2 {
+        from {
+            transform: translate(0, 0);
+        }
+
+        to {
+            transform: translate(-300px, -250px);
+        }
+    }
+
+    /* =========================================
+       HANDY
+       ========================================= */
+
+    @media (max-width: 600px) {
 
         body {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
-
-            font-family: Arial, Helvetica, sans-serif;
-            background: #05000a;
-        }
-
-        /* Pinkes Neon-Licht */
-        body::before {
-            content: "";
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-
-            background: #ff00cc;
-            filter: blur(150px);
-            opacity: 0.3;
-
-            top: -200px;
-            left: -200px;
-
-            animation: bewegen1 7s infinite alternate ease-in-out;
-        }
-
-        /* Blaues Neon-Licht */
-        body::after {
-            content: "";
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-
-            background: #00eaff;
-            filter: blur(150px);
-            opacity: 0.25;
-
-            bottom: -200px;
-            right: -200px;
-
-            animation: bewegen2 8s infinite alternate ease-in-out;
         }
 
         .container {
-            position: relative;
-            z-index: 2;
             width: 100%;
-            padding: 20px;
-            text-align: center;
+            padding: 20px 10px;
         }
 
-        /* Englischer Haupttext */
         .neon {
-            margin: 0;
+            /*
+             * Kleine Schrift auf schmalen Displays
+             */
+            font-size: clamp(38px, 15vw, 80px);
 
-            font-size: clamp(55px, 12vw, 150px);
-
+            letter-spacing: 0;
             line-height: 0.95;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 2px;
 
-            color: white;
-
-            text-shadow:
-                0 0 5px white,
-                0 0 10px #ff00cc,
-                0 0 20px #ff00cc,
-                0 0 40px #ff00cc,
-                0 0 80px #ff00cc;
-
-            animation: flackern 3s infinite;
+            /*
+             * Niemals horizontal über den Bildschirm
+             */
+            width: 100%;
+            max-width: 100%;
         }
 
-        .neon span {
-            display: block;
+        .girlfriend {
+            /*
+             * GIRLFRIEND ist besonders lang,
+             * deshalb noch etwas kleiner.
+             */
+            font-size: 0.68em;
+
+            white-space: nowrap;
         }
 
-        /* Spanischer Text */
         .spanisch {
-            margin-top: 35px;
+            margin-top: 25px;
 
-            font-size: clamp(25px, 5vw, 55px);
-            font-weight: 700;
-            letter-spacing: 3px;
+            font-size: clamp(19px, 6vw, 40px);
 
-            color: white;
+            letter-spacing: 1px;
 
-            text-shadow:
-                0 0 5px white,
-                0 0 10px #00eaff,
-                0 0 20px #00eaff,
-                0 0 40px #00eaff;
+            line-height: 1.1;
 
-            animation: spanischGlow 2.5s infinite alternate ease-in-out;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    /* =========================================
+       SEHR KLEINE HANDYS
+       ========================================= */
+
+    @media (max-width: 380px) {
+
+        .container {
+            padding: 15px 8px;
         }
 
-        @keyframes flackern {
-            0%, 18%, 22%, 63%, 100% {
-                opacity: 1;
-            }
-
-            20%, 21%, 62% {
-                opacity: 0.65;
-            }
+        .neon {
+            font-size: clamp(34px, 14vw, 65px);
         }
 
-        @keyframes spanischGlow {
-            from {
-                opacity: 0.75;
-                transform: scale(1);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1.02);
-            }
+        .girlfriend {
+            font-size: 0.62em;
         }
 
-        @keyframes bewegen1 {
-            from {
-                transform: translate(0, 0);
-            }
+        .spanisch {
+            font-size: 18px;
+        }
+    }
 
-            to {
-                transform: translate(300px, 250px);
-            }
+    /* =========================================
+       QUERFORMAT AUF HANDYS
+       ========================================= */
+
+    @media (max-height: 500px) and (orientation: landscape) {
+
+        .container {
+            padding: 10px;
         }
 
-        @keyframes bewegen2 {
-            from {
-                transform: translate(0, 0);
-            }
-
-            to {
-                transform: translate(-300px, -250px);
-            }
+        .neon {
+            font-size: clamp(32px, 10vh, 70px);
         }
 
-        /* Optimierung für kleine Handy-Bildschirme */
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
-
-            .neon {
-                font-size: clamp(50px, 17vw, 90px);
-                letter-spacing: 1px;
-            }
-
-            .spanisch {
-                margin-top: 25px;
-                font-size: clamp(22px, 6vw, 40px);
-                letter-spacing: 1px;
-            }
+        .girlfriend {
+            font-size: 0.7em;
         }
-    </style>
+
+        .spanisch {
+            margin-top: 15px;
+            font-size: clamp(16px, 4vh, 30px);
+        }
+    }
+</style>
+```
+
 </head>
 
 <body>
 
-    <div class="container">
+```
+<div class="container">
 
-        <!-- Englischer Text -->
-        <h1 class="neon">
-            <span>she</span>
-            <span>is</span>
-            <span>not</span>
-            <span>my</span>
-            <span>girlfriend!</span>
-        </h1>
+    <!-- Englischer Text -->
+    <h1 class="neon">
+        <span>she</span>
+        <span>is</span>
+        <span>not</span>
+        <span>my</span>
+        <span class="girlfriend">girlfriend!</span>
+    </h1>
 
-        <!-- Spanischer Text -->
-        <div class="spanisch">
-            ¡Ella no es mi novia!
-        </div>
-
+    <!-- Spanischer Text -->
+    <div class="spanisch">
+        ¡Ella no es mi novia!
     </div>
+
+</div>
+```
 
 </body>
 </html>
