@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>We Are Both Single! Interested in getting to know us?</title>
+    <title>She Is Single! Interested in getting to know her?</title>
 
     <style>
         * {
@@ -116,6 +116,10 @@
             text-align: center;
         }
 
+        /* =========================
+           MAIN HEADER
+        ========================= */
+
         .neon {
             width: 100%;
             max-width: 1500px;
@@ -123,7 +127,7 @@
             margin: 0;
             padding: 0;
 
-            font-size: clamp(55px, 11vw, 150px);
+            font-size: clamp(60px, 13vw, 180px);
 
             line-height: 0.93;
 
@@ -153,10 +157,14 @@
             text-align: center;
         }
 
-        .girlfriend {
-            font-size: 0.78em;
+        .single {
+            font-size: 0.72em;
             white-space: nowrap;
         }
+
+        /* =========================
+           ENGLISH TEXT
+        ========================= */
 
         .english-question {
             width: 100%;
@@ -177,8 +185,6 @@
 
             text-align: center;
 
-            white-space: nowrap;
-
             text-shadow:
                 0 0 5px white,
                 0 0 10px #ff00cc,
@@ -189,10 +195,14 @@
                 englishGlow 2.5s ease-in-out infinite alternate;
         }
 
+        /* =========================
+           SPANISH TEXT
+        ========================= */
+
         .spanisch {
             width: 100%;
 
-            margin-top: 18px;
+            margin-top: 20px;
 
             padding: 0 10px;
 
@@ -202,7 +212,7 @@
 
             font-weight: 700;
 
-            letter-spacing: 2px;
+            letter-spacing: 1px;
 
             color: white;
 
@@ -218,48 +228,20 @@
                 spanishGlow 2.5s ease-in-out infinite alternate;
         }
 
-        .spanisch-zweit {
-            width: 100%;
-
-            margin-top: 14px;
-
-            padding: 0 10px;
-
-            font-size: clamp(18px, 3vw, 38px);
-
-            line-height: 1.1;
-
-            font-weight: 600;
-
-            letter-spacing: 1px;
-
-            color: white;
-
-            text-align: center;
-
-            text-shadow:
-                0 0 5px white,
-                0 0 10px #00eaff,
-                0 0 20px #00eaff;
-
-            animation:
-                spanishGlow 3s ease-in-out infinite alternate;
-        }
+        /* =========================
+           INSTAGRAM
+        ========================= */
 
         .kontakt {
             width: 100%;
 
-            margin-top: 30px;
-
-            padding-top: 0;
+            margin-top: 35px;
 
             display: flex;
 
             justify-content: center;
 
             align-items: center;
-
-            gap: 70px;
         }
 
         .kontakt-item {
@@ -309,7 +291,7 @@
                 opacity 0.3s ease;
         }
 
-        /* Instagram Symbol – Silber/Grau */
+        /* Silber/Graues Instagram-Symbol */
 
         .instagram-icon {
             width: 46px;
@@ -378,6 +360,10 @@
                 0 0 30px #999999,
                 0 0 55px #777777;
         }
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
 
         @keyframes flicker {
             0%,
@@ -459,82 +445,93 @@
             }
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 600px) {
 
             .container {
                 width: 100%;
                 max-width: 100%;
+
                 min-height: 100vh;
+
                 padding: 20px 8px;
             }
 
             .neon {
                 width: 100%;
-                max-width: 100%;
-                font-size: clamp(38px, 15vw, 80px);
+
+                font-size: clamp(45px, 17vw, 90px);
+
                 line-height: 0.95;
+
                 letter-spacing: 0;
-                margin: 0;
             }
 
-            .girlfriend {
-                font-size: 0.65em;
-                white-space: nowrap;
+            .single {
+                font-size: 0.68em;
             }
 
             .english-question {
                 margin-top: 28px;
+
                 padding: 0 5px;
+
                 font-size: clamp(19px, 6vw, 40px);
+
                 letter-spacing: 0;
-                white-space: nowrap;
             }
 
             .spanisch {
                 margin-top: 18px;
-                padding: 0 5px;
-                font-size: clamp(19px, 6vw, 40px);
-                letter-spacing: 1px;
-            }
 
-            .spanisch-zweit {
-                margin-top: 12px;
                 padding: 0 5px;
-                font-size: clamp(17px, 5vw, 30px);
+
+                font-size: clamp(19px, 6vw, 40px);
+
                 letter-spacing: 0;
             }
 
             .kontakt {
-                margin-top: 25px;
-                padding-top: 0;
-                gap: 35px;
+                margin-top: 28px;
             }
 
             .kontakt-item {
                 gap: 7px;
+
                 font-size: 18px;
             }
 
             .instagram-icon {
                 width: 40px;
                 height: 40px;
+
                 border-width: 2px;
+
                 border-radius: 10px;
             }
 
             .instagram-icon::before {
                 width: 14px;
                 height: 14px;
+
                 border-width: 2px;
             }
 
             .instagram-icon::after {
                 width: 4px;
                 height: 4px;
+
                 top: 6px;
                 right: 6px;
             }
         }
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
 
         @media (max-width: 380px) {
 
@@ -543,36 +540,34 @@
             }
 
             .neon {
-                font-size: clamp(34px, 14vw, 65px);
+                font-size: clamp(40px, 15vw, 70px);
+
                 line-height: 0.95;
             }
 
-            .girlfriend {
-                font-size: 0.60em;
+            .single {
+                font-size: 0.65em;
             }
 
             .english-question {
                 margin-top: 24px;
+
                 font-size: 17px;
             }
 
             .spanisch {
                 margin-top: 16px;
-                font-size: 18px;
-            }
 
-            .spanisch-zweit {
-                margin-top: 10px;
-                font-size: 16px;
+                font-size: 18px;
             }
 
             .kontakt {
                 margin-top: 22px;
-                gap: 22px;
             }
 
             .kontakt-item {
                 gap: 5px;
+
                 font-size: 16px;
             }
 
@@ -581,6 +576,10 @@
                 height: 36px;
             }
         }
+
+        /* =========================
+           LANDSCAPE PHONE
+        ========================= */
 
         @media (max-height: 500px) and (orientation: landscape) {
 
@@ -594,17 +593,14 @@
 
             .english-question {
                 margin-top: 15px;
+
                 font-size: clamp(16px, 4vh, 30px);
             }
 
             .spanisch {
                 margin-top: 12px;
-                font-size: clamp(16px, 4vh, 30px);
-            }
 
-            .spanisch-zweit {
-                margin-top: 8px;
-                font-size: clamp(14px, 3vh, 24px);
+                font-size: clamp(16px, 4vh, 30px);
             }
 
             .kontakt {
@@ -618,43 +614,29 @@
 
     <main class="container">
 
+        <!-- HEADER -->
+
         <h1 class="neon">
-            <span>WE</span>
-            <span>ARE</span>
-            <span>BOTH</span>
-            <span class="girlfriend">SINGLE!</span>
+            <span>SHE</span>
+            <span>IS</span>
+            <span class="single">SINGLE!</span>
         </h1>
 
+        <!-- ENGLISH -->
+
         <div class="english-question">
-            Interested in getting to know us?
+            Interested in getting to know her?
         </div>
+
+        <!-- SPANISH -->
 
         <div class="spanisch">
-            Los dos estamos solteros!
+            Ella está soltera. ¿Te interesa conocerla?
         </div>
 
-        <div class="spanisch-zweit">
-            ¿Te interesa conocernos?
-        </div>
+        <!-- INSTAGRAM -->
 
         <div class="kontakt">
-
-            <div class="kontakt-item">
-
-                <a
-                    href="https://www.instagram.com/_karsten.mueller/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram Me"
-                >
-                    <span class="instagram-icon"></span>
-                </a>
-
-                <span class="english-word">Me</span>
-
-                <span class="spanish-word">(Yo)</span>
-
-            </div>
 
             <div class="kontakt-item">
 
