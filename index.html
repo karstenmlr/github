@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>She’s Single</title>
+    <title>Das ist nicht meine Freundin!</title>
 
     <style>
         * {
@@ -28,31 +27,39 @@
             background: #05000a;
         }
 
+        /* Pinkes Neon-Licht */
         body::before {
             content: "";
             position: fixed;
             width: 500px;
             height: 500px;
             border-radius: 50%;
+
             background: #ff00cc;
             filter: blur(150px);
             opacity: 0.3;
+
             top: -200px;
             left: -200px;
+
             animation: bewegen1 7s infinite alternate ease-in-out;
         }
 
+        /* Blaues Neon-Licht */
         body::after {
             content: "";
             position: fixed;
             width: 500px;
             height: 500px;
             border-radius: 50%;
+
             background: #00eaff;
             filter: blur(150px);
             opacity: 0.25;
+
             bottom: -200px;
             right: -200px;
+
             animation: bewegen2 8s infinite alternate ease-in-out;
         }
 
@@ -66,11 +73,15 @@
 
         .neon {
             margin: 0;
-            font-size: clamp(50px, 12vw, 140px);
+
+            /* Passt sich automatisch an Handy/Desktop an */
+            font-size: clamp(55px, 12vw, 150px);
+
             line-height: 0.95;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
+
             color: white;
 
             text-shadow:
@@ -117,13 +128,14 @@
             }
         }
 
+        /* Optimierung für kleine Handy-Bildschirme */
         @media (max-width: 600px) {
             .container {
                 padding: 15px;
             }
 
             .neon {
-                font-size: clamp(48px, 16vw, 90px);
+                font-size: clamp(50px, 17vw, 90px);
                 letter-spacing: 1px;
             }
         }
@@ -134,17 +146,13 @@
 
     <div class="container">
         <h1 class="neon">
-            <span>She’s</span>
-            <span>single.</span>
-            <span>Want</span>
-            <span>to</span>
-            <span>get</span>
-            <span>to</span>
-            <span>know</span>
-            <span>her?</span>
+            <span>Das</span>
+            <span>ist</span>
+            <span>nicht</span>
+            <span>meine</span>
+            <span>Freundin!</span>
         </h1>
     </div>
 
 </body>
 </html>
-```
